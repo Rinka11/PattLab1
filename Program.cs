@@ -1,4 +1,6 @@
-﻿using PattLab1.Meowpons.Catans;
+﻿using PattLab1.Meowpons;
+using PattLab1.Meowpons.Catans;
+using PattLab1.Meowpons.MeowgicWands;
 using PattLab1.Meowpons.Sweords;
 using PattLab1.Pusheens;
 
@@ -8,11 +10,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        var pusheen = new KnightWeowrrior("Barsik", new Purrsword());
-        var pusheen2 = new SamuraiMeowshido("Plush", new Nyaunchaku());
-        pusheen2.Attack();
-        pusheen.Attack();
-        pusheen.SetMeowpon(new Claypaw());
-        pusheen.Attack();
+        // var pusheen = new KnightWeowrrior("Barsik", new Purrsword());
+        // var pusheen2 = new SamuraiMeowshido("Plush", new Nyaunchaku());
+        // pusheen2.Attack();
+        // pusheen.Attack();
+        // pusheen.SetMeowpon(new Claypaw());
+        // pusheen.Attack();
+
+        IMeowpon weapon = new Claypaw();
+
+        switch (weapon)
+        {
+            case Laserwand:
+                Console.WriteLine("LASER WAND!!");
+                break;
+            case Claypaw:
+                Console.WriteLine("Claypaw!!");
+                break;
+        }
     }
 }

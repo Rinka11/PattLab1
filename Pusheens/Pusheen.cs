@@ -1,3 +1,4 @@
+using PattLab1.Armeowrs;
 using PattLab1.Meowpons;
 
 namespace PattLab1.Pusheens;
@@ -5,6 +6,7 @@ namespace PattLab1.Pusheens;
 public abstract class Pusheen<TMeowpon> where TMeowpon : IMeowpon
 {
     public string Name { get; protected set; }
+    public Armor Armor { get; protected set; }
     public IMeowpon Meowpon { get; protected set; }
 
     public Pusheen(string name, IMeowpon meowpon)
@@ -23,5 +25,11 @@ public abstract class Pusheen<TMeowpon> where TMeowpon : IMeowpon
     {
         Console.WriteLine($"{Name} is setting the meowpon to {meowpon.GetType().Name}");
         Meowpon = meowpon;
+    }
+    
+    public void SetArmor(Armor armor)
+    {
+        Console.WriteLine($"{Name} is setting the armor to {armor.GetType().Name}");
+        Armor = armor;
     }
 }
